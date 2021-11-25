@@ -43,7 +43,7 @@ To experiment with vscode dev containers in a (semi-) useful way.
 ### Configuration
 
 The container requires the below config to be added to the Azurite docker container in a table called configuration with the structure:
-> Servernames, passwords and user id's are what are configured in the [dockerfile](https://github.com/DannyGB/Pingen/Backend/.devcontainer/Dockerfile) and [docker-compose.yml](https://github.com/DannyGB/Pingen/Backend/.devcontainer/docker-compose.yml) files and should only be amended in-line with those files.
+> Servernames, passwords and user id's are what are configured in the [dockerfile](https://github.com/DannyGB/Pingen/blob/main/Backend/.devcontainer/Dockerfile) and [docker-compose.yml](https://github.com/DannyGB/Pingen/blob/main/Backend/.devcontainer/docker-compose.yml) files and should only be amended in-line with those files.
 
 ```
 Partition Key: LOCAL
@@ -98,7 +98,7 @@ The local.settings.json in the functions folder should look like the following
 }
 ```
 
-Each docker container can be accessed from the host as well as the backend docker container, this allows you to connect your SSMS, Azure Storage Explorer etc ... tooling to those containers. The RabbitMq management website is also available via your browser at [http://localhost:15672]() from your host machine. User Id's and passwords can be seen in the above config or the [docker-compose.yml](https://github.com/DannyGB/Pingen/Backend/.devcontainer/docker-compose.yml) file.
+Each docker container can be accessed from the host as well as the backend docker container, this allows you to connect your SSMS, Azure Storage Explorer etc ... tooling to those containers. The RabbitMq management website is also available via your browser at [http://localhost:15672]() from your host machine. User Id's and passwords can be seen in the above config or the [docker-compose.yml](https://github.com/DannyGB/Pingen/blob/main/Backend/.devcontainer/docker-compose.yml) file.
 
 ## 📖 License
 
