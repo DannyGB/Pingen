@@ -12,9 +12,13 @@ An Azure function to generate random pin numbers
 
 To experiment with vscode dev containers in a (semi-) useful way.
 
+* [Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)
+* [Create a development container](https://code.visualstudio.com/docs/remote/create-dev-container)
+
+
 ## 👉 Features
 
-* An angular front end that uses the back end to generate pins (this is not necessary though, you can just look at the Backend)
+* An angular front end that uses the back end to generate pins (this can be ignored if you're only interested in the .NetCore backend)
 * An Azure function that generates random 4 digit pin numbers within a given range
 * Reads config from an Azurite docker container
 * Publishes an NServiceBus event on Pin generation using RabbitMQ transport and SQL persistence (in a Rabbitmq and MSSQL docker container respectively)
@@ -24,9 +28,9 @@ To experiment with vscode dev containers in a (semi-) useful way.
 
 ### Pre-requisites
 
-1. vscode
-2. Docker
-3. Docker-compose
+1. [vscode](https://code.visualstudio.com/)
+2. [Docker](https://www.docker.com/get-started)
+3. [Docker-compose](https://docs.docker.com/compose/)
 
 ### Build
 
@@ -99,6 +103,32 @@ The local.settings.json in the functions folder should look like the following
 ```
 
 Each docker container can be accessed from the host as well as the backend docker container, this allows you to connect your SSMS, Azure Storage Explorer etc ... tooling to those containers. The RabbitMq management website is also available via your browser at [http://localhost:15672]() from your host machine. User Id's and passwords can be seen in the above config or the [docker-compose.yml](https://github.com/DannyGB/Pingen/blob/main/Backend/.devcontainer/docker-compose.yml) file.
+
+## Images and Containers
+
+All necessary images will be downloaded and containers created when you `Open a Remote Window` in vscode.
+
+The process is driven from the [devcontainer.json](https://github.com/DannyGB/Pingen/blob/main/Backend/.devcontainer/devcontainer.json) file which in turn references the [docker-compose.yml](https://github.com/DannyGB/Pingen/blob/main/Backend/.devcontainer/docker-compose.yml) and the [dockerfile](https://github.com/DannyGB/Pingen/blob/main/Backend/.devcontainer/Dockerfile) files to download and build images.
+
+### MSSQL
+
+During the setup process the postCreateCommand.sh file will search sql files and dacpac projects, if it finds any it will execute them providing a way to create and seed databases during the setup.
+
+The SA password will be set to P@ssw0rd by default, this can be changed in the [docker-compose.yml](https://github.com/DannyGB/Pingen/blob/main/Backend/.devcontainer/docker-compose.yml) file.
+
+The port 1433 will be exposed and be available to the host as well as the container.
+
+### REDIS
+
+The port 6379 will be exposed and be available to the host as well as the container.
+
+### Rabbitmq
+
+The rabbitmq management interface will be installed in the container and the ports 5672 and 15672 will be exposed and be available to the host as well as the container.
+
+### Azurite
+
+The latest version of the Azurite image will be installed and the ports 10000-10002 will be exposed to the host as well as the container.
 
 ## 📖 License
 
