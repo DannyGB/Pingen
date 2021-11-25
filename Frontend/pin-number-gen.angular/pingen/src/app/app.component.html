@@ -1,0 +1,318 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 8px;
+  }
+
+  .toolbar #youtube-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover,
+  .toolbar #youtube-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .card svg.material-icons path {
+    fill: #888;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    all: unset;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+
+  .card-container .card:not(.highlight-card) {
+    cursor: pointer;
+  }
+
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+
+  .card-container .card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+
+  .card.highlight-card {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+  }
+
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+
+  svg#rocket {
+    width: 80px;
+    position: absolute;
+    left: -10px;
+    top: -24px;
+  }
+
+  svg#rocket-smoke {
+    height: calc(100vh - 95px);
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    z-index: -10;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+  .terminal {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 6px;
+    padding-top: 45px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+  }
+
+  .terminal::before {
+    content: "\2022 \2022 \2022";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(58, 58, 58);
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 0;
+    padding: 14px 0;
+    text-indent: 4px;
+  }
+
+  .terminal pre {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+  }
+
+  .circle-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 1s ease-out;
+  }
+
+  .circle-link:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+
+  footer a {
+    display: flex;
+    align-items: center;
+  }
+
+  .github-star-badge {
+    color: #24292e;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 3px 10px;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: 3px;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    margin-left: 4px;
+    font-weight: 600;
+  }
+
+  .github-star-badge:hover {
+    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+    border-color: rgba(27,31,35,.35);
+    background-position: -.5em;
+  }
+
+  .github-star-badge .material-icons {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="40"
+    alt="Spaceman"
+    src="data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%201000%201000%22%20enable-background%3D%22new%200%200%201000%201000%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cmetadata%3E%20Svg%20Vector%20Icons%20%3A%20http%3A%2F%2Fwww.onlinewebfonts.com%2Ficon%20%3C%2Fmetadata%3E%0A%3Cg%3E%3Cg%20transform%3D%22translate%280.000000%2C511.000000%29%20scale%280.100000%2C-0.100000%29%22%3E%3Cpath%20d%3D%22M6774.2%2C4820.6c-58.5-58.5-71.1-87.8-71.1-158.9c0-71.1%2C12.5-100.3%2C71.1-158.8c58.5-58.5%2C87.8-71.1%2C158.8-71.1c73.2%2C0%2C100.3%2C12.5%2C160.9%2C73.2c69%2C69%2C73.2%2C81.5%2C62.7%2C171.4C7133.7%2C4885.4%2C6918.4%2C4964.8%2C6774.2%2C4820.6z%22%2F%3E%3Cpath%20d%3D%22M1695.1%2C4371.2c-190.2-117.1-94.1-420.1%2C131.7-420.1c152.6%2C0%2C263.3%2C156.8%2C215.3%2C303.1C1994%2C4400.5%2C1833.1%2C4454.8%2C1695.1%2C4371.2z%22%2F%3E%3Cpath%20d%3D%22M4738.4%2C4055.6c-687.7-52.3-1327.2-338.6-1831-821.4c-545.5-520.5-879.9-1226.9-919.7-1948c-12.5-202.7%2C25.1-691.8%2C64.8-879.9c8.4-41.8-2.1-46-129.6-60.6c-326-35.5-604-167.2-834-395c-163-163-273.8-344.9-344.9-566.4c-41.8-133.8-48.1-196.5-56.4-727.4l-8.4-579l-257.1-123.3c-204.8-98.2-265.4-135.9-290.5-186c-48.1-92-41.8-158.8%2C20.9-232c110.8-131.7%2C89.9-137.9%2C1178.8%2C392.9c543.4%2C265.4%2C992.8%2C482.8%2C999.1%2C482.8c4.2%2C0%2C71.1-64.8%2C148.4-142.1c405.5-415.9%2C1013.7-673%2C1841.4-781.7c257.1-33.4%2C1038.8-33.4%2C1295.9%2C0c631.2%2C83.6%2C1132.9%2C250.8%2C1536.3%2C514.2c69%2C46%2C202.7%2C160.9%2C296.8%2C257.1c94.1%2C96.1%2C175.6%2C173.5%2C179.7%2C173.5c4.2%2C0%2C464-221.6%2C1020-491.2c556-269.6%2C1026.3-491.2%2C1049.2-491.2c56.4%2C0%2C156.8%2C56.4%2C181.8%2C102.4c31.3%2C60.6%2C25.1%2C175.6-14.6%2C229.9c-18.8%2C29.2-163%2C112.9-351.1%2C202.7l-317.7%2C152.6l-4.2%2C526.7c-2.1%2C601.9-18.8%2C708.6-148.4%2C957.3c-206.9%2C397.1-599.9%2C668.9-1047.1%2C721.1l-115%2C14.6l35.5%2C307.2c46%2C378.3%2C48.1%2C627%2C8.4%2C871.6c-98.2%2C614.5-376.2%2C1166.3-811%2C1613.6C6487.8%2C3796.4%2C5635%2C4120.4%2C4738.4%2C4055.6z%20M5411.4%2C3606.2c528.8-92%2C1011.6-349.1%2C1400.4-744.1c177.7-181.8%2C401.3-501.6%2C495.4-710.6c140-311.4%2C232-700.2%2C232-982.4c0-167.2-240.4-2332.6-271.7-2445.5c-43.9-158.9-372-418-716.9-566.4c-428.5-186-942.7-273.8-1582.3-273.8c-859%2C0-1502.8%2C163-1977.3%2C499.6c-135.9%2C96.1-321.9%2C288.4-321.9%2C332.3c0%2C14.6-62.7%2C551.8-137.9%2C1193.5c-110.8%2C944.7-135.9%2C1203.9-125.4%2C1350.2c75.2%2C1153.7%2C959.4%2C2134%2C2113.1%2C2347.2C4723.7%2C3643.8%2C5196.1%2C3643.8%2C5411.4%2C3606.2z%20M2113.2-128.9c16.7-92%2C117.1-963.5%2C117.1-1003.3c0-29.2-1045.1-560.1-1103.6-560.1c-31.4%2C0-35.5%2C639.6-2.1%2C836.1c60.6%2C372%2C351.1%2C683.5%2C714.8%2C762.9c71.1%2C14.6%2C158.9%2C29.2%2C196.5%2C29.2C2096.4-62%2C2104.8-68.2%2C2113.2-128.9z%20M8145.3-118.4c229.9-77.3%2C438.9-267.5%2C549.7-501.6l66.9-142.1l6.3-443.1l6.3-445.2l-110.8%2C50.1c-163%2C73.2-923.8%2C451.5-938.4%2C468.2c-8.4%2C8.4%2C12.5%2C240.4%2C46%2C516.3c31.4%2C275.9%2C58.5%2C514.2%2C60.6%2C528.8C7831.8-53.6%2C8001.1-72.4%2C8145.3-118.4z%22%2F%3E%3Cpath%20d%3D%22M4644.3%2C3169.4C3402.8%2C2975%2C2600.2%2C1693.7%2C2972.2%2C502.4c102.4-321.9%2C244.6-558.1%2C497.5-811c259.2-263.3%2C568.5-438.9%2C953.1-543.4c177.7-48.1%2C240.4-54.3%2C545.5-54.3c305.2%2C0%2C367.9%2C6.3%2C545.5%2C54.3c744.1%2C200.6%2C1291.7%2C733.6%2C1486.1%2C1448.5c35.5%2C137.9%2C43.9%2C227.8%2C46%2C501.6c2.1%2C303.1-4.2%2C353.2-54.4%2C539.2C6698.9%2C2686.6%2C5706.1%2C3334.5%2C4644.3%2C3169.4z%20M5194%2C2807.8c106.6-79.4%2C154.7-173.5%2C144.2-284.2c-16.7-190.2-121.2-269.6-409.7-305.2c-236.2-29.3-470.3-142.1-631.2-305.2c-211.1-211.1-290.5-436.8-290.5-825.6c0-202.7-6.3-250.8-41.8-309.3c-127.5-209-428.5-200.7-547.6%2C16.7c-35.5%2C64.8-39.7%2C106.6-31.4%2C397.1c6.3%2C298.9%2C12.5%2C340.7%2C75.2%2C522.5c125.4%2C367.9%2C332.3%2C643.8%2C635.4%2C842.3C4487.5%2C2814.1%2C5020.5%2C2935.3%2C5194%2C2807.8z%20M4084.2%2C379.1c87.8-25.1%2C232-142.1%2C273.8-221.6c71.1-138%2C14.6-334.4-117-411.8c-69-41.8-200.7-48-284.3-16.7c-89.9%2C33.4-219.5%2C167.2-244.5%2C250.8c-58.5%2C192.3%2C81.5%2C397.1%2C284.3%2C415.9C4008.9%2C397.9%2C4048.6%2C389.5%2C4084.2%2C379.1z%22%2F%3E%3Cpath%20d%3D%22M3108.1-933.6c-69-25.1-104.5-77.3-104.5-154.6c0-196.5%2C290.5-196.5%2C296.8%2C2.1C3304.5-987.9%2C3195.9-902.2%2C3108.1-933.6z%22%2F%3E%3Cpath%20d%3D%22M6724-933.6c-106.6-39.7-142.1-177.7-62.7-257.1c94.1-94.1%2C257.1-27.2%2C257.1%2C106.6C6918.4-987.9%2C6809.7-904.3%2C6724-933.6z%22%2F%3E%3Cpath%20d%3D%22M3672.4-1295.1c-41.8-41.8-54.3-112.9-29.3-177.7c20.9-54.4%2C131.7-94.1%2C194.4-71.1c108.7%2C41.8%2C135.9%2C142.1%2C62.7%2C236.2C3845.9-1238.7%2C3735.1-1232.4%2C3672.4-1295.1z%22%2F%3E%3Cpath%20d%3D%22M8504.8%2C3978.2c-23-20.9-62.7-108.7-87.8-194.4c-25.1-85.7-60.6-173.5-77.3-192.3c-18.8-20.9-110.8-60.6-206.9-89.9c-179.8-54.3-217.4-85.7-217.4-183.9c0-73.2%2C52.3-108.7%2C229.9-160.9c85.7-25.1%2C171.4-60.6%2C190.2-79.4c18.8-20.9%2C56.4-106.6%2C81.5-192.3c52.3-177.7%2C87.8-229.9%2C160.9-229.9c98.2%2C0%2C129.6%2C37.6%2C183.9%2C217.4c29.3%2C96.1%2C69%2C188.1%2C89.9%2C206.9c18.8%2C16.7%2C106.6%2C52.3%2C192.3%2C77.3c317.7%2C92%2C309.3%2C263.4-18.8%2C353.2c-85.7%2C23-169.3%2C54.3-183.9%2C69c-14.6%2C16.7-46%2C98.2-71.1%2C183.9C8705.4%2C3986.6%2C8607.2%2C4066%2C8504.8%2C3978.2z%22%2F%3E%3Cpath%20d%3D%22M760.9%2C3288.5c-20.9-20.9-60.6-115-89.9-209c-27.2-92-62.7-177.7-77.3-190.2c-14.6-10.4-106.6-43.9-204.8-75.2c-160.9-48.1-183.9-60.6-206.9-119.1c-41.8-100.3%2C18.8-163%2C221.6-227.8c92-29.3%2C177.7-58.5%2C190.2-69c14.6-8.4%2C48.1-94.1%2C77.3-190.2c56.4-179.8%2C100.3-242.5%2C173.5-242.5c77.3%2C0%2C129.6%2C69%2C177.7%2C229.9c25.1%2C85.7%2C58.5%2C171.4%2C73.2%2C190.2c16.7%2C18.8%2C100.3%2C54.3%2C190.2%2C81.5c192.3%2C56.4%2C234.1%2C87.8%2C234.1%2C177.7c0%2C87.8-41.8%2C121.2-229.9%2C177.7c-85.7%2C25.1-169.3%2C56.4-181.8%2C66.9c-14.6%2C12.5-50.2%2C98.2-81.5%2C192.3c-29.3%2C92-66.9%2C186-85.7%2C204.8C896.7%2C3334.5%2C806.8%2C3334.5%2C760.9%2C3288.5z%22%2F%3E%3Cpath%20d%3D%22M9148.6%2C1417.8c-29.3-14.6-69-62.7-92-108.7c-102.4-209%2C131.7-409.7%2C334.4-286.4c123.3%2C75.2%2C138%2C269.6%2C29.3%2C367.9C9368%2C1436.7%2C9215.4%2C1453.4%2C9148.6%2C1417.8z%22%2F%3E%3Cpath%20d%3D%22M3195.9-3115.6c-54.3-27.2-115-81.5-146.3-129.6l-56.4-83.6l-6.3-599.9l-6.3-599.9l54.3-64.8c62.7-75.2%2C137.9-98.2%2C229.9-66.9c131.7%2C43.9%2C135.9%2C64.8%2C135.9%2C647.9v522.5h1724.4h1722.3l6.3-530.9c6.3-528.8%2C6.3-533%2C56.4-585.2c94.1-100.3%2C275.9-83.6%2C336.5%2C27.2c12.5%2C25.1%2C20.9%2C265.4%2C20.9%2C629.1c0%2C660.5-6.3%2C691.8-160.9%2C808.9l-75.2%2C58.5l-1872.8%2C6.3l-1872.8%2C4.2L3195.9-3115.6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%0A%3C%2Fsvg%3E"
+  />
+  <span>Pin Generator</span>
+    <div class="spacer"></div>        
+</div>
+
+<div class="content" role="main">
+    <app-pin-list></app-pin-list>   
+</div>
