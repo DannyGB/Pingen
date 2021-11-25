@@ -1,8 +1,8 @@
-<!-- <p align="right">
-  <a href="https://github.com/DannyGB/CodeExampleCompilation/actions/workflows/build.yml">
-      <img src="https://github.com/DannyGB/CodeExampleCompilation/actions/workflows/build.yml/badge.svg">
+<p align="right">
+  <a href="https://github.com/DannyGB/Pingen/actions/workflows/build.yml">
+      <img src="https://github.com/DannyGB/Pingen/actions/workflows/build.yml/badge.svg">
   </a>    
-</p> -->
+</p>
 
 # 🦊 Pingen
 
